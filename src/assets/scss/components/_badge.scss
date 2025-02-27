@@ -1,0 +1,60 @@
+.badge {
+    font-size: 13px;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 22px;
+    border: 0;
+    background-color: transparent;
+    color: $text-color-light;
+    @include border-radius(6px);
+
+    &.badge-primary {
+        background-color: rgba($btn-primary-normal, 0.2);
+        color: $btn-primary-hover;
+    }
+
+    &.badge-secondary {
+        background-color: rgba($btn-secondary-normal, 0.2) ;
+        color: $btn-secondary-hover;
+    }
+
+    &.badge-success {
+        background-color: rgba($btn-success-normal, 0.2) ;
+        color:$btn-success-hover;
+    }
+
+    &.badge-info {
+        background-color: rgba($btn-info-normal, 0.2) ;
+        color: $btn-info-hover;
+    }
+
+    &.badge-warning {
+        background-color:rgba($btn-warning-normal, 0.2)  ;
+        color: $btn-warning-hover;
+    }
+
+    &.badge-danger {
+        background-color: rgba($btn-danger-normal, 0.2) ;
+        color: $btn-danger-hover;
+    }
+
+    &.badge-light {
+        background-color: $btn-light-normal;
+        color: $btn-light-default-text-color;
+    }
+
+    &.badge-dark {
+        background-color: rgba($btn-dark-normal, 0.2) ;
+        color:$btn-dark-hover;
+    }
+
+    &.badge-sm {
+        font-size: 11px;
+    }
+
+    &.badge-lg {
+        font-size: 16px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}

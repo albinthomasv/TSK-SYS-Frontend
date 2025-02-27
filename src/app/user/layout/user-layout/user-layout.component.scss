@@ -1,0 +1,12 @@
+.user-layout-container{
+    
+    display: flex;
+    min-height: 100vh;
+    background: #f8f9fa;
+    .content {
+        flex-grow: 1;
+        padding: 20px;
+        width: 100%;
+        overflow: hidden;
+    }
+}

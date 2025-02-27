@@ -1,0 +1,537 @@
+.form-group {
+  label,
+  mat-label {
+    display: inline-block;
+    // display: block; add score when click on label
+    font-size: 0.9rem;
+    line-height: 17px;
+    color: $text-color;
+    @extend .font-regular;
+    font-weight: $font-medium;
+    @media (max-width: 1289.98px) {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+.form-control:not(.mat-input-element),
+mat-select {
+  border: 1px solid $secondary-color-light;
+  background-color: #fff;
+  @include animate(all 0.4s ease);
+  color: $text-color;
+  // @include border-radius(5px);
+  border-radius: $border-radius-form;
+  font-size: 15px;
+  line-height: unset;
+  padding: 10px 15px;
+  padding-left: 10px;
+  font-weight: $font-regular;
+  @include placeholder(#d0d0d0, 11px, $font-regular);
+  @media (max-width: 1199.98px) {
+    padding: 8px 10px;
+  }
+  @media (max-width: 767.98px) {
+    font-size: 14px;
+  }
+
+  &:hover,
+  &:focus {
+    box-shadow: none;
+    color: $text-color;
+  }
+
+  &:not(.form-control-lg):not(.mat-input-element) {
+    min-height: 40px;
+  }
+
+  &.form-control-lg:not(.mat-input-element) {
+    min-height: 55px;
+  }
+}
+
+select.form-control:not(.mat-input-element) {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  padding-right: 30px;
+  appearance: none;
+  -webkit-appearance: none;
+  // background: #fff url("#{$img-path}select-drop.svg") right 10px center
+    // no-repeat;
+  background-size: 16px 8px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 15px;
+  line-height: unset;
+
+  &.ext-code {
+    max-width: 130px;
+  }
+}
+
+textarea.form-control {
+  padding-top: 10px;
+  resize: unset;
+}
+
+.custom-control {
+  .custom-control-label {
+    cursor: pointer;
+    font-size: 15px;
+    @extend .font-regular;
+    line-height: 25px;
+    color: #929292;
+
+    a {
+      text-decoration: underline;
+
+      &:hover,
+      &:focus,
+      &:focus-within,
+      &:active {
+        color: $primary-color;
+      }
+    }
+  }
+
+  &--lg {
+    .custom-control-label {
+      &::after,
+      &::before {
+        width: 1.5rem;
+        height: 1.5rem;
+        top: 0;
+      }
+    }
+  }
+}
+
+.custom-checkbox .custom-control-label::before {
+  @include border-radius(10px);
+}
+
+.custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+  border-color: lighten($primary-color, 5%);
+  background-color: lighten($primary-color, 5%);
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: $primary-color;
+  background-color: $primary-color;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+  box-shadow: 0 0 0 0.2rem rgba($primary-color, 0.23);
+}
+
+.file-upload {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 35px;
+  max-width: 150px;
+
+  .upload-btn {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-color: $btn-dark-normal;
+    background-color: $btn-dark-normal;
+    color: $btn-dark-default-text-color;
+    @include border-radius(0);
+    @include animate(all 0.25s ease-in);
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    @extend .font-bold;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+
+    &:hover,
+    &:focus {
+      background-color: $btn-primary-normal;
+      border-color: $btn-primary-normal;
+      color: #fff;
+    }
+
+    &:disabled,
+    &.disabled,
+    &[disabled] {
+      border-color: $btn-primary-disabled;
+      background-color: $btn-primary-disabled;
+      color: $btn-primary-disabled-hover-text-color;
+    }
+  }
+
+  input[type="file"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    z-index: 0;
+    cursor: pointer;
+  }
+}
+
+.input-group {
+  flex-wrap: nowrap;
+
+  .input-group-prepend {
+    overflow: hidden;
+
+    .input-group-text {
+      border: 0;
+      background-color: #f6f5f5;
+      font-weight: $font-bold;
+      font-size: 20px;
+    }
+  }
+
+  .form-control {
+    border-color: #f6f5f5;
+
+    &:focus,
+    &:hover {
+      z-index: inherit;
+    }
+  }
+
+  .btn,
+  .button {
+    min-width: 1px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+  }
+
+  .input-group-append {
+    .mat-form-field-appearance-outline .mat-form-field-outline-start {
+      @include border-radius(0 5px 5px 0);
+    }
+
+    .form-control {
+      border-left: 0;
+      @include border-radius(0 5px 5px 0);
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-left: 1px;
+      }
+    }
+  }
+
+  .input-group-prepend {
+    .mat-form-field-appearance-outline .mat-form-field-outline-start {
+      @include border-radius(5px 0 0 5px);
+    }
+
+    .form-control {
+      border-right: 0;
+      @include border-radius(5px 0 0 5px);
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-right: 1px;
+      }
+    }
+  }
+
+  &.input-group-small {
+    max-width: 420px;
+  }
+}
+
+.rtl-style {
+  .input-group,
+  .form-inline {
+    direction: ltr;
+  }
+
+  .form-inline {
+    justify-content: flex-end;
+  }
+}
+
+mat-form-field.mat-form-field {
+  font-size: 15px;
+  display: block;
+}
+
+.mat-checkbox-label {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: $secondary-color;
+}
+
+.mat-checkbox-layout .mat-checkbox-label {
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: pre-wrap;
+  line-height: 22px;
+}
+
+// form style
+.form-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 1rem;
+  padding: 0;
+  li {
+    margin-left: 3px;
+    display: block;
+    // &:first-child {
+    // margin-left: 0;
+    // }
+    @media (max-width: 449px) {
+      margin-left: 0;
+      width: 65%;
+    }
+    @media (max-width: 399px) {
+      width: 100%;
+    }
+  }
+}
+.form-group {
+  margin-bottom: 1rem;
+  position: relative;
+  label,
+  mat-label {
+    margin-bottom: 6px;
+  }
+}
+.from-radio {
+  background: #f7f8f9;
+  border: 0.829754px solid $border-color;
+  border-radius: 16.5951px;
+  padding: 5px 8px;
+  margin: 0;
+  margin-right: 8px !important;
+  margin-bottom: 5px !important;
+  display: flex;
+  align-items: center;
+  position: relative;
+  // radio icon click start
+  label {
+    position: relative;
+    padding-left: 25px;
+    left: -25px;
+    z-index: 6;
+  }
+  // radio icon click end
+  .form-check-label {
+    font-weight: $font-medium;
+    font-size: 0.8rem !important;
+  }
+  .form-check-input {
+    margin: 0;
+    margin-left: 0;
+    margin-right: 8px;
+    accent-color: $secondary-color;
+  }
+  input[type="radio"] {
+    // position: absolute;
+    visibility: hidden;
+  }
+  .check {
+    display: block;
+    position: absolute;
+    border: 2px solid #000;
+    border-radius: 100%;
+    height: 15px;
+    width: 15px;
+    top: 5px;
+    left: 10px;
+    z-index: 5;
+    transition: border 0.25s linear;
+    -webkit-transition: border 0.25s linear;
+    &::before {
+      display: block;
+      position: absolute;
+      content: "";
+      border-radius: 100%;
+      height: 7px;
+      width: 7px;
+      top: 2px;
+      left: 2px;
+      margin: auto;
+      transition: background 0.25s linear;
+      -webkit-transition: background 0.25s linear;
+    }
+  }
+
+  input[type="radio"]:checked ~ .check {
+    border: 2px solid #000;
+  }
+
+  input[type="radio"]:checked ~ .check::before {
+    background: $secondary-color-hover;
+  }
+}
+select {
+  font-weight: 400;
+  font-size: 10.6166px;
+  line-height: 1.5;
+}
+label {
+  font-weight: 500;
+  font-size: 12.51px;
+  line-height: 114%;
+  @media (max-width: 1289.98px) {
+    font-size: 0.7rem;
+  }
+  @media (max-width: 1199.98px) {
+    font-size: 0.65rem;
+  }
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea,
+.mat-input-element {
+  min-height: 39px !important;
+  height: 39px;
+  padding: 3px 8px;
+  border: 0.829754px solid $secondary-color-light !important;
+  border-radius: $border-radius-form;
+  // width: calc(100% - 18px) !important;
+  width: 100%;
+  position: relative;
+  @media (max-width: 767.98px) {
+    width: 100% !important;
+  }
+  &:hover,
+  &:focus {
+    border-color: $secondary-color-light !important;
+    box-shadow: none !important;
+  }
+}
+
+.mat-input-element,
+input {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+textarea {
+  height: 150px;
+}
+#togglePassword {
+  position: absolute;
+  right: 10px;
+  // bottom: 10px;
+  top: 36px;
+  cursor: pointer;
+}
+#login_password,
+#password,
+#register_Cpassword,
+#register_password,
+#old-Pchange,
+#new-Pchange,
+#cnfrm_password {
+  padding-right: 50px !important;
+}
+
+[type="submit"] {
+  width: 100%;
+  background-color: $secondary-color !important;
+  color: #fff;
+  height: 48px;
+  font-size: 1.23rem;
+  border: 0;
+  text-transform: uppercase;
+  &:hover {
+    color: #fff;
+  }
+}
+.country-flag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  .country-flag-icon {
+    width: 100px;
+  }
+  small {
+    width: 100%;
+  }
+
+  // .form-control,
+  select {
+    // width: calc(100% - 115px) !important;
+    width: 115px !important;
+    margin-right: 10px;
+  }
+  input {
+    width: calc(100% - 125px) !important;
+  }
+}
+
+// Angular Material Forms
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent;
+  padding: 0 !important;
+}
+.mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0;
+}
+.mat-form-field {
+  mat-select {
+  }
+}
+.mat-form-field-infix {
+  border-top: 0;
+  width: 100% !important;
+  overflow: hidden;
+}
+.mat-form-field-appearance-fill .mat-form-field-underline::before {
+  content: none !important;
+}
+.mat-form-field-appearance-fill .mat-select-arrow-wrapper {
+  transform: translateY(0) !important;
+}
+.mat-form-field-underline {
+  display: none;
+}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: $secondary-color-hover;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: $secondary-color-hover;
+}
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: $secondary-color;
+}
+.mat-slide-toggle.mat-checked .mat-ripple-element {
+  background-color: $secondary-color;
+}
+.mat-form-field-infix,
+.mat-form-field-wrapper {
+  padding: 0;
+}
+
+.country-select {
+  height: 40px;
+  line-height: 40px !important;
+  width: 100%;
+  box-shadow: none !important;
+  background: transparent;
+  border: 1px solid $secondary-color-light !important;
+}

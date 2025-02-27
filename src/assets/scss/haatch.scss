@@ -1,0 +1,12 @@
+@import './inc/variables';
+@import './inc/mixins';
+@import './inc/base';
+@import './inc/typography';
+@import './components/buttons';
+@import './components/badge';
+@import './components/forms';
+@import './components/tables';
+@import './components/pagination';
+@import './components/common';
+
+@import '../../../node_modules/bootstrap/scss/bootstrap';

@@ -1,0 +1,136 @@
+// Variables (optional)
+@import '../../../assets/scss/inc/variables';
+$card-width: 300px;
+$card-padding: 20px;
+$card-bg: rgba(255, 255, 255, 0.2);
+$card-border-radius: 15px;
+$card-box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+$card-border: 1px solid rgba(255, 255, 255, 0.18);
+$text-color: #fff;
+$font-size: 24px;
+$font-weight: bold;
+$animation-duration: 2s;
+$bg-color: rgba(255, 255, 255, 0.15);
+$blur-amount: 15px;
+// Define our base color and its variations
+$loader-base: #1ee5bb;
+$loader-light: lighten($loader-base, 20%);
+$loader-dark: darken($loader-base, 15%);
+
+.loader-container {
+    background: $bg-color;
+    // background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    backdrop-filter: blur($blur-amount);
+    -webkit-backdrop-filter: blur($blur-amount);
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+
+    // Loader Card styling
+    .loader-card {
+        width: $card-width;
+        padding: $card-padding;
+        background: #fff;
+        border-radius: $card-border-radius;
+        box-shadow: $card-box-shadow;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: $card-border;
+        text-align: center;
+
+        // Logo container styling
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+            }
+        }
+
+        // Loader text styling and animation
+        // .loader-text {
+        //     color: $primary-color-black ;
+        //     font-size: $font-size;
+        //     font-weight: $font-weight;
+        //     animation: loading $animation-duration infinite;
+        // }
+
+
+        // Define our base color and its variations
+
+
+        .loader-text {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            position: relative;
+            // Create a gradient background based on the color variations
+            background: linear-gradient(90deg, $loader-dark, $loader-base, $loader-light);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            // Apply two animations: one for the gradient shift and one for a gentle pulse
+            animation: gradient-shift 3s ease infinite, pulse 2s ease-in-out infinite;
+            text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        // Shifting gradient animation
+        @keyframes gradient-shift {
+            0% {
+                background-position: 200% center;
+            }
+
+            100% {
+                background-position: -200% center;
+            }
+        }
+
+        // Pulse animation for a subtle scale effect
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+
+    }
+
+    // Keyframes for loading animation
+    @keyframes loading {
+        0% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        50% {
+            opacity: 0.5;
+            transform: translateY(-10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}

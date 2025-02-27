@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+// paths
+$img-path: "~src/assets/img/" !default;
+
+// typography
+$main-font: "Lexend", serif !default;
+$icon-font: 'FontAwesome' !default;
+$font-regular:400 !default;
+$font-medium: 500 !default;
+$font-semibold: 600 !default;
+$font-bold:700 !default;
+$Extra-bold:700 !default;
+$font-bolder:800 !default;
+
+$primary-main-color:#1FFFA5;
+// color themes
+$primary-color:#132D3A;
+$primary-color-black: #0A0A0A;
+$primary-color-hover:#08405c;
+$primary-color-light:#c4d1fa;
+
+$secondary-color:#69DF77;
+$secondary-color-hover: #006241;
+// $secondary-color-hover:#38b146;
+$secondary-color-light: #E4E4E5;
+// $secondary-color-light:#DFDFDF;
+
+$secondary-color-hover-new: #132D3A;
+
+
+$text-color:#292929;
+// $text-color-light:#707070;
+$text-color-light: #BABABA;
+$text-color-dark: #0d0c0d;
+
+$text-color-gray: #98A2B2;
+$text-color-clientdb: #1F2633;
+
+$bg-light:#F7F8FA;
+$border-color: #E2E8F0;
+
+$border-radius-form: 8.29754px;
+$input-placeholder-color: #666666;
+// Button Colors
+
+/* Primary button */
+$btn-primary-normal:$secondary-color;
+$btn-primary-hover:$secondary-color-hover;
+$btn-primary-disabled:#f0d0da;
+$btn-primary-default-text-color:#fff;
+$btn-primary-hover-text-color:#fff;
+$btn-primary-disabled-hover-text-color:$secondary-color-hover;
+
+/* Secondary button */
+$btn-secondary-normal:#04D7AB;
+$btn-secondary-hover:#028167;
+$btn-secondary-disabled:#cdf7ee;
+$btn-secondary-default-text-color:#fff;
+$btn-secondary-hover-text-color:#fff;
+$btn-secondary-disabled-hover-text-color:#04D7AB;
+
+/* Success button */
+$btn-success-normal:#22CC88;
+$btn-success-hover:#08BC7F;
+$btn-success-disabled:#9CE8CA;
+$btn-success-default-text-color:#fff;
+$btn-success-hover-text-color:#fff;
+$btn-success-disabled-hover-text-color:#08BC7F;
+
+/* Info button */
+$btn-info-normal:#02B1CD;
+$btn-info-hover:#00A5C1;
+$btn-info-disabled:#AAE5EE;
+$btn-info-default-text-color:#fff;
+$btn-info-hover-text-color:#fff;
+$btn-info-disabled-hover-text-color:#00A5C1;
+
+/* Warning button */
+$btn-warning-normal:#FFB452;
+$btn-warning-hover:#F9A537;
+$btn-warning-disabled:#FFD9A8;
+$btn-warning-default-text-color:#000;
+$btn-warning-hover-text-color:#000;
+$btn-warning-disabled-hover-text-color:#F9A537;
+
+/* Danger button */
+$btn-danger-normal:#EF5853;
+$btn-danger-hover:#DB453F;
+$btn-danger-disabled:#F3C1BF;
+$btn-danger-default-text-color:#fff;
+$btn-danger-hover-text-color:#fff;
+$btn-danger-disabled-hover-text-color:#DB453F;
+
+/* Light button */
+$btn-light-normal:#f1f1f1;
+$btn-light-hover:#5D6874;
+$btn-light-disabled:#f3f3f3;
+$btn-light-default-text-color:#5D6874;
+$btn-light-hover-text-color:#fff;
+$btn-light-disabled-hover-text-color:#748290;
+
+/* Dark button */
+$btn-dark-normal:#211f20;
+$btn-dark-hover:#0d0c0d;
+$btn-dark-disabled:#d3d2d2;
+$btn-dark-default-text-color:#fff;
+$btn-dark-hover-text-color:#fff;
+$btn-dark-disabled-hover-text-color:#211f20;

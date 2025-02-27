@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <!-- <button class="btn btn-primary ml-3" id="toggleSidebar" style="margin-left: 2rem;"><i class="fa fa-bars"></i></button> -->
+    <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#" style="margin-left: 2rem;">Dashboard</a> -->
+        <div class="d-flex ms-auto">
+            <!-- <input class="form-control me-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button> -->
+            <div class="dropdown ms-3">
+                <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" (click)="showDropdown=!showDropdown">
+                    <i class="fa fa-user"></i> User
+                </button>
+                <ul class="dropdown-menu" [ngClass]="{'show': showDropdown}">
+                    
+                    <li><a class="dropdown-item" (click)="userLogout()">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

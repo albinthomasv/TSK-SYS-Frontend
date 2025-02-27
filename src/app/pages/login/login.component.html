@@ -1,0 +1,57 @@
+<div class="user-login-container">
+    <div class="container full-height">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="user-login-left-container">
+                    <div class="logo">
+                        <a routerLink="/"><img src="../../assets/images/logo.svg" alt="logo"></a> 
+                    </div>
+                    <div class="user-login-left-content">
+                        <div class="login-form-container">
+                            <h1>Welcome Back!</h1>
+                            <p>Sign in to your account.</p>
+                            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="floatingInput"  [ngClass]="{'is-invalid': (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) || (submitted && loginForm.get('email')?.errors)}"
+                                                placeholder="name@example.com" formControlName="email">
+                                            <label for="floatingInput">Email address</label>
+                                            <div class="invalid-feedback" *ngIf="emailErrors?.['required']">Email is required.</div>
+                                            <div class="invalid-feedback" *ngIf="emailErrors?.['email']">Email is invalid.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating mb-4">
+                                            <input type="password" class="form-control" id="floatingPassword" [ngClass]="{'is-invalid': (loginForm.get('password')?.errors && loginForm.get('password')?.touched) || (submitted && loginForm.get('password')?.errors)}"
+                                                placeholder="Password" formControlName="password">
+                                            <label for="floatingPassword">Password</label>
+                                            <div class="invalid-feedback" *ngIf="passwordErrors?.['required']">Password is required.</div>
+                                      
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-12 form-submit-btn">
+                                        <button type="submit" class="btn btn-primary">Sign In</button>
+                                       
+                                    </div>
+
+                                  
+
+
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 user-login-right-container">
+
+                <img src="../../assets/images/login-side.png" alt="main-right-img">
+            </div>
+        </div>
+    </div>
+
+</div>

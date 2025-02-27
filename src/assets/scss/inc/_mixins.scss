@@ -1,0 +1,87 @@
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin animate($properties) {
+    -webkit-transition: $properties;
+    -moz-transition: $properties;
+    -ms-transition: $properties;
+    -o-transition: $properties;
+    transition: $properties;
+}
+
+// material design shadow levels
+@mixin box-shadow ($level) {
+    @if $level==0 {
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    @else if $level==1 {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    @else if $level==2 {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    @else if $level==3 {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+        -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    @else if $level==4 {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+
+    @else if $level==5 {
+        box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+        -webkit-box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    }
+
+}
+
+// material design shadow levels Ends
+
+// Custom input place holder color change
+
+@mixin placeholder($color:$text-color, $fontsize:15px, $fontweight:$font-regular) {
+    &::-webkit-input-placeholder {
+        /* WebKit browsers */
+        color: $color !important;
+        font-size: $fontsize;
+        font-weight: $fontweight;
+    }
+
+    &:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: $color !important;
+        font-size: $fontsize;
+        font-weight: $fontweight;
+    }
+
+    &::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: $color !important;
+        font-size: $fontsize;
+        font-weight: $fontweight;
+    }
+
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: $color !important;
+        font-size: $fontsize;
+        font-weight: $fontweight;
+    }
+}
+
+@mixin img-shadow {
+    background: #fff;        
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+    
